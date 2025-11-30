@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaptopGuru - The Final MVP</title>
+    <style>
+        /* --- VERY BASIC MOBILE-FIRST CSS FOR READABILITY --- */
+        body { font-family: sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
+        .container { max-width: 450px; margin: 20px auto; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+        h1 { font-size: 1.5em; margin: 0; }
+        .lang-toggle button { border: none; background: none; font-weight: bold; cursor: pointer; padding: 5px; color: #007bff; }
+        .lang-toggle button:hover { text-decoration: underline; }
+        .question h3 { margin-top: 0; color: #555; }
+        .option { padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; }
+        .option:hover { background-color: #e6f7ff; }
+        .laptop-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 8px; position: relative; }
+        .laptop-card-red { border-left: 5px solid #ff4d4f; background-color: #fff0f6; }
+        .laptop-card-yellow { border-left: 5px solid #faad14; background-color: #fffbe6; }
+        .laptop-card-green { border-left: 5px solid #52c41a; background-color: #f6ffed; }
+        .scam-alert-banner { font-weight: bold; padding: 5px; margin-bottom: 10px; border-radius: 4px; text-align: center; }
+        .laptop-card-red .scam-alert-banner { background-color: #ff4d4f; color: white; }
+        .laptop-card-green .scam-alert-banner { background-color: #52c41a; color: white; }
+        .buy-now-btn { display: block; width: 100%; padding: 10px; background-color: #ff9900; color: white; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        .jargon { cursor: help; color: #007bff; font-weight: bold; border-bottom: 1px dotted #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 id="main-title">Laptop Finder Quiz</h1>
+            <div class="lang-toggle">
+                <button id="lang-toggle-eng">ENG</button> |
+                <button id="lang-toggle-hing">HING</button>
+            </div>
+        </header>
+
+        <div id="quiz-view">
+            <h2>Q1: What is your primary use?</h2>
+            <div class="question">
+                <div class="option" data-category="Productive">Office Work / Browsing / Studies</div>
+                <div class="option" data-category="Creative">Video Editing / Graphic Design / Light Gaming</div>
+                <div class="option" data-category="Performance">Heavy Gaming / Coding / 3D Rendering</div>
+            </div>
+
+            <p style="margin-top: 20px; font-weight: bold;">(Questions 2 and 3 would be here in the full app...)</p>
+            
+            <button id="submit-quiz" class="buy-now-btn" style="background-color: #4CAF50;">Find My Laptop!</button>
+        </div>
+        
+        <div id="results-view" style="display: none;">
+            <h2>Your Best Recommendations:</h2>
+            <div id="results-container">
+                </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
